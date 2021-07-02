@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CORS introduced</title>
+</head>
+
+
+<body>
+
+
+<div>
+    <div id="app-header">
+        Hello, i'm a dummy view
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    console.log('started ANOTHER origin request')
+    fetch("http://localhost:8000/api/3_1", {
+        method: "POST"
+    })
+        .then(response => response.text())
+        .then(body => {
+            console.log("ANOTHER origin request SUCCESS");
+            console.log(body);
+        });
+
+
+</script>
+</body>
+</html>
